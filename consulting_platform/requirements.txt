@@ -1,0 +1,10 @@
+numpy>=1.24
+pandas>=2.0
+requests>=2.31
+streamlit>=1.36
+pymupdf>=1.24        # fast PDF text extraction (falls back to pypdf)
+pypdf>=4.0
+# optional
+fastapi>=0.110       # api.py microservice
+uvicorn>=0.29
+# sentence-transformers  # uncomment to enable dense re-ranking (large download)

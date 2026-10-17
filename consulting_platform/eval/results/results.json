@@ -1,0 +1,643 @@
+{
+  "llm": "No LLM (extractive mode)",
+  "routing": {
+    "lexicon": {
+      "n": 52,
+      "primary_accuracy": 0.962,
+      "exact_set_match": 0.923,
+      "mean_jaccard": 0.946,
+      "macro_f1": 0.958,
+      "per_domain_f1": {
+        "technology": 0.903,
+        "clinical": 0.923,
+        "sec": 0.966,
+        "csr": 1.0,
+        "retail": 1.0
+      },
+      "cross_domain_cases": 7,
+      "confusion_primary": {
+        "technology": {
+          "technology": 10,
+          "sec": 1,
+          "csr": 1,
+          "clinical": 1
+        },
+        "clinical": {
+          "clinical": 9,
+          "technology": 1,
+          "sec": 1
+        },
+        "sec": {
+          "sec": 9,
+          "clinical": 2,
+          "csr": 1
+        },
+        "csr": {
+          "csr": 10,
+          "sec": 1
+        },
+        "retail": {
+          "retail": 5
+        }
+      },
+      "errors": [
+        {
+          "q": "Recommend a platform to measure mitochondrial respiration in live cells",
+          "gold": [
+            "clinical"
+          ],
+          "pred": [
+            "technology"
+          ]
+        },
+        {
+          "q": "What did Agilent say about its Life Sciences and Diagnostics segment performance?",
+          "gold": [
+            "sec"
+          ],
+          "pred": [
+            "clinical"
+          ]
+        },
+        {
+          "q": "Is Alphabet's Google Cloud segment profitable?",
+          "gold": [
+            "sec"
+          ],
+          "pred": [
+            "sec",
+            "technology"
+          ]
+        },
+        {
+          "q": "Which technology investments could improve food security, and how does Cisco's 10-K describe its sustainability and financial position to fund them?",
+          "gold": [
+            "csr",
+            "sec",
+            "technology"
+          ],
+          "pred": [
+            "sec",
+            "csr"
+          ]
+        }
+      ]
+    },
+    "prototype": {
+      "n": 52,
+      "primary_accuracy": 1.0,
+      "exact_set_match": 0.942,
+      "mean_jaccard": 0.974,
+      "macro_f1": 0.979,
+      "per_domain_f1": {
+        "technology": 0.933,
+        "clinical": 0.963,
+        "sec": 1.0,
+        "csr": 1.0,
+        "retail": 1.0
+      },
+      "cross_domain_cases": 7,
+      "confusion_primary": {
+        "technology": {
+          "technology": 11,
+          "sec": 1,
+          "csr": 1
+        },
+        "clinical": {
+          "clinical": 10,
+          "sec": 1
+        },
+        "sec": {
+          "sec": 12
+        },
+        "csr": {
+          "csr": 11
+        },
+        "retail": {
+          "retail": 5
+        }
+      },
+      "errors": [
+        {
+          "q": "What did Agilent say about its Life Sciences and Diagnostics segment performance?",
+          "gold": [
+            "sec"
+          ],
+          "pred": [
+            "sec",
+            "clinical"
+          ]
+        },
+        {
+          "q": "Is Alphabet's Google Cloud segment profitable?",
+          "gold": [
+            "sec"
+          ],
+          "pred": [
+            "sec",
+            "technology"
+          ]
+        },
+        {
+          "q": "Which technology investments could improve food security, and how does Cisco's 10-K describe its sustainability and financial position to fund them?",
+          "gold": [
+            "csr",
+            "sec",
+            "technology"
+          ],
+          "pred": [
+            "csr",
+            "sec"
+          ]
+        }
+      ]
+    },
+    "hybrid": {
+      "n": 52,
+      "primary_accuracy": 1.0,
+      "exact_set_match": 0.942,
+      "mean_jaccard": 0.974,
+      "macro_f1": 0.979,
+      "per_domain_f1": {
+        "technology": 0.933,
+        "clinical": 0.963,
+        "sec": 1.0,
+        "csr": 1.0,
+        "retail": 1.0
+      },
+      "cross_domain_cases": 7,
+      "confusion_primary": {
+        "technology": {
+          "technology": 10,
+          "sec": 1,
+          "csr": 1,
+          "clinical": 1
+        },
+        "clinical": {
+          "clinical": 10,
+          "sec": 1
+        },
+        "sec": {
+          "sec": 11,
+          "csr": 1
+        },
+        "csr": {
+          "csr": 10,
+          "sec": 1
+        },
+        "retail": {
+          "retail": 5
+        }
+      },
+      "errors": [
+        {
+          "q": "What did Agilent say about its Life Sciences and Diagnostics segment performance?",
+          "gold": [
+            "sec"
+          ],
+          "pred": [
+            "sec",
+            "clinical"
+          ]
+        },
+        {
+          "q": "Is Alphabet's Google Cloud segment profitable?",
+          "gold": [
+            "sec"
+          ],
+          "pred": [
+            "sec",
+            "technology"
+          ]
+        },
+        {
+          "q": "Which technology investments could improve food security, and how does Cisco's 10-K describe its sustainability and financial position to fund them?",
+          "gold": [
+            "csr",
+            "sec",
+            "technology"
+          ],
+          "pred": [
+            "sec",
+            "csr"
+          ]
+        }
+      ]
+    }
+  },
+  "routing_holdout": {
+    "lexicon": {
+      "n": 23,
+      "primary_accuracy": 1.0,
+      "exact_set_match": 0.913,
+      "mean_jaccard": 0.957,
+      "macro_f1": 0.966,
+      "per_domain_f1": {
+        "technology": 0.923,
+        "clinical": 0.909,
+        "sec": 1.0,
+        "csr": 1.0,
+        "retail": 1.0
+      },
+      "cross_domain_cases": 3,
+      "confusion_primary": {
+        "technology": {
+          "technology": 6,
+          "csr": 1
+        },
+        "clinical": {
+          "clinical": 5,
+          "sec": 1
+        },
+        "sec": {
+          "sec": 4
+        },
+        "csr": {
+          "csr": 4
+        },
+        "retail": {
+          "retail": 2
+        }
+      },
+      "errors": [
+        {
+          "q": "Can AI and cloud data platforms help track food insecurity for our sustainability report?",
+          "gold": [
+            "technology",
+            "csr"
+          ],
+          "pred": [
+            "csr"
+          ]
+        },
+        {
+          "q": "We buy Agilent lab instruments; what supply chain risks does Agilent disclose in its 10-K?",
+          "gold": [
+            "clinical",
+            "sec"
+          ],
+          "pred": [
+            "sec"
+          ]
+        }
+      ]
+    },
+    "prototype": {
+      "n": 23,
+      "primary_accuracy": 1.0,
+      "exact_set_match": 0.913,
+      "mean_jaccard": 0.957,
+      "macro_f1": 0.966,
+      "per_domain_f1": {
+        "technology": 0.923,
+        "clinical": 0.909,
+        "sec": 1.0,
+        "csr": 1.0,
+        "retail": 1.0
+      },
+      "cross_domain_cases": 3,
+      "confusion_primary": {
+        "technology": {
+          "technology": 6,
+          "csr": 1
+        },
+        "clinical": {
+          "clinical": 5,
+          "sec": 1
+        },
+        "sec": {
+          "sec": 4
+        },
+        "csr": {
+          "csr": 4
+        },
+        "retail": {
+          "retail": 2
+        }
+      },
+      "errors": [
+        {
+          "q": "Can AI and cloud data platforms help track food insecurity for our sustainability report?",
+          "gold": [
+            "technology",
+            "csr"
+          ],
+          "pred": [
+            "csr"
+          ]
+        },
+        {
+          "q": "We buy Agilent lab instruments; what supply chain risks does Agilent disclose in its 10-K?",
+          "gold": [
+            "clinical",
+            "sec"
+          ],
+          "pred": [
+            "sec"
+          ]
+        }
+      ]
+    },
+    "hybrid": {
+      "n": 23,
+      "primary_accuracy": 1.0,
+      "exact_set_match": 0.913,
+      "mean_jaccard": 0.957,
+      "macro_f1": 0.966,
+      "per_domain_f1": {
+        "technology": 0.923,
+        "clinical": 0.909,
+        "sec": 1.0,
+        "csr": 1.0,
+        "retail": 1.0
+      },
+      "cross_domain_cases": 3,
+      "confusion_primary": {
+        "technology": {
+          "technology": 6,
+          "csr": 1
+        },
+        "clinical": {
+          "clinical": 5,
+          "sec": 1
+        },
+        "sec": {
+          "sec": 4
+        },
+        "csr": {
+          "csr": 4
+        },
+        "retail": {
+          "retail": 2
+        }
+      },
+      "errors": [
+        {
+          "q": "Can AI and cloud data platforms help track food insecurity for our sustainability report?",
+          "gold": [
+            "technology",
+            "csr"
+          ],
+          "pred": [
+            "csr"
+          ]
+        },
+        {
+          "q": "We buy Agilent lab instruments; what supply chain risks does Agilent disclose in its 10-K?",
+          "gold": [
+            "clinical",
+            "sec"
+          ],
+          "pred": [
+            "sec"
+          ]
+        }
+      ]
+    }
+  },
+  "retrieval": {
+    "overall": {
+      "n": 37,
+      "hit@1": 0.865,
+      "hit@3": 0.973,
+      "hit@6": 1,
+      "mrr@6": 0.92,
+      "source_precision@k": 0.75
+    },
+    "by_domain": {
+      "csr": {
+        "n": 10,
+        "hit@1": 0.6,
+        "hit@3": 0.9,
+        "hit@6": 1,
+        "mrr@6": 0.753,
+        "source_precision@k": 0.9
+      },
+      "sec": {
+        "n": 10,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@6": 1,
+        "mrr@6": 1.0,
+        "source_precision@k": 1.0
+      },
+      "clinical": {
+        "n": 12,
+        "hit@1": 0.917,
+        "hit@3": 1,
+        "hit@6": 1,
+        "mrr@6": 0.958,
+        "source_precision@k": 0.486
+      },
+      "technology": {
+        "n": 5,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@6": 1,
+        "mrr@6": 1.0,
+        "source_precision@k": 0.583
+      }
+    },
+    "misses": []
+  },
+  "recommenders": {
+    "market_basket": {
+      "test_baskets": 200,
+      "cases": 719,
+      "hit_rate@5": 0.137,
+      "popularity_hit_rate@5": 0.132,
+      "random_expected_hit_rate@5": 0.132,
+      "mrr": 0.062,
+      "coverage(answered)": 1.0,
+      "precision@5(answered)": 0.027,
+      "lift_over_popularity": 1.04,
+      "splits": 5,
+      "hit_rate_std": 0.015
+    },
+    "clinical_trial_recommender": {
+      "queries": 8,
+      "precision@5": 0.975,
+      "ndcg@5": 0.984
+    },
+    "csr_investment_recommender": {
+      "cases": 8,
+      "hit@1": 1.0,
+      "hit@3": 1.0
+    },
+    "fault_diagnosis": {
+      "cases": 8,
+      "hit@1": 1.0,
+      "hit@2": 1.0
+    }
+  },
+  "responses": {
+    "summary": {
+      "citation_coverage": 0.722,
+      "citation_validity": 1.0,
+      "grounding_rate": 0.983,
+      "query_coverage": 0.589,
+      "actionable": 0.7
+    },
+    "mode": "No LLM (extractive mode)",
+    "rows": [
+      {
+        "citation_coverage": 0.455,
+        "citation_validity": 1.0,
+        "grounding_rate": 1.0,
+        "query_coverage": 0.267,
+        "invalid_citations": [],
+        "n_citations": 5,
+        "q": "Our Cisco enterprise router is experiencing intermittent connectivity failures. ",
+        "agent": "technology",
+        "mode": "extractive",
+        "confidence": "Low",
+        "n_recommendations": 2,
+        "actionable": 1,
+        "final_latency_s": 0.0,
+        "final_citation_validity": 1.0
+      },
+      {
+        "citation_coverage": 0.556,
+        "citation_validity": 1.0,
+        "grounding_rate": 1.0,
+        "query_coverage": 0.636,
+        "invalid_citations": [],
+        "n_citations": 5,
+        "q": "Which diagnostic instrument best meets our pathology laboratory requirements for",
+        "agent": "clinical",
+        "mode": "extractive",
+        "confidence": "Medium",
+        "n_recommendations": 1,
+        "actionable": 1,
+        "final_latency_s": 0.0,
+        "final_citation_validity": 1.0
+      },
+      {
+        "citation_coverage": 0.5,
+        "citation_validity": 1.0,
+        "grounding_rate": 1.0,
+        "query_coverage": 1.0,
+        "invalid_citations": [],
+        "n_citations": 5,
+        "q": "What are the financial, competitive, and operational risks associated with Cisco",
+        "agent": "sec",
+        "mode": "extractive",
+        "confidence": "Medium",
+        "n_recommendations": 6,
+        "actionable": 1,
+        "final_latency_s": 0.01,
+        "final_citation_validity": 1.0
+      },
+      {
+        "citation_coverage": 1.0,
+        "citation_validity": 1.0,
+        "grounding_rate": 1.0,
+        "query_coverage": 0.625,
+        "invalid_citations": [],
+        "n_citations": 5,
+        "q": "List major food insecurity reasons in 2023 from within the context of the SOFI 2",
+        "agent": "csr",
+        "mode": "extractive",
+        "confidence": "High",
+        "n_recommendations": 0,
+        "actionable": 0,
+        "final_latency_s": 0.01,
+        "final_citation_validity": 1.0
+      },
+      {
+        "citation_coverage": 1.0,
+        "citation_validity": 1.0,
+        "grounding_rate": 1.0,
+        "query_coverage": 0.333,
+        "invalid_citations": [],
+        "n_citations": 5,
+        "q": "Explain malnutrition in war zones",
+        "agent": "csr",
+        "mode": "extractive",
+        "confidence": "High",
+        "n_recommendations": 0,
+        "actionable": 0,
+        "final_latency_s": 0.0,
+        "final_citation_validity": 1.0
+      },
+      {
+        "citation_coverage": 1.0,
+        "citation_validity": 1.0,
+        "grounding_rate": 1.0,
+        "query_coverage": 0.8,
+        "invalid_citations": [],
+        "n_citations": 5,
+        "q": "Explain the impact of increased food prices on food security",
+        "agent": "csr",
+        "mode": "extractive",
+        "confidence": "High",
+        "n_recommendations": 0,
+        "actionable": 0,
+        "final_latency_s": 0.0,
+        "final_citation_validity": 1.0
+      },
+      {
+        "citation_coverage": 0.5,
+        "citation_validity": 1.0,
+        "grounding_rate": 1.0,
+        "query_coverage": 0.857,
+        "invalid_citations": [],
+        "n_citations": 5,
+        "q": "Which technology investments could improve food security and sustainability outc",
+        "agent": "csr",
+        "mode": "extractive",
+        "confidence": "High",
+        "n_recommendations": 4,
+        "actionable": 1,
+        "final_latency_s": 0.01,
+        "final_citation_validity": 1.0
+      },
+      {
+        "citation_coverage": 0.625,
+        "citation_validity": 1.0,
+        "grounding_rate": 1.0,
+        "query_coverage": 0.875,
+        "invalid_citations": [],
+        "n_citations": 5,
+        "q": "Summarize clinical evidence on machine learning for heart attack prediction",
+        "agent": "clinical",
+        "mode": "extractive",
+        "confidence": "High",
+        "n_recommendations": 3,
+        "actionable": 1,
+        "final_latency_s": 0.04,
+        "final_citation_validity": 1.0
+      },
+      {
+        "citation_coverage": 0.75,
+        "citation_validity": 1.0,
+        "grounding_rate": 0.833,
+        "query_coverage": 0.429,
+        "invalid_citations": [],
+        "n_citations": 6,
+        "q": "We are replacing our Cisco routers; what are Cisco's financial and supply-chain ",
+        "agent": "sec",
+        "mode": "extractive",
+        "confidence": "Medium",
+        "n_recommendations": 3,
+        "actionable": 1
+      },
+      {
+        "citation_coverage": 0.833,
+        "citation_validity": 1.0,
+        "grounding_rate": 1.0,
+        "query_coverage": 0.071,
+        "invalid_citations": [],
+        "n_citations": 5,
+        "q": "We are replacing our Cisco routers; what are Cisco's financial and supply-chain ",
+        "agent": "technology",
+        "mode": "extractive",
+        "confidence": "Low",
+        "n_recommendations": 2,
+        "actionable": 1,
+        "final_latency_s": 0.02,
+        "final_citation_validity": 1.0
+      }
+    ]
+  }
+}

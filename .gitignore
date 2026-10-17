@@ -1,0 +1,15 @@
+# Repository root = hackathon folder (Canvas data + consulting_platform code)
+# NOTE: consulting_platform/.env (shared Gemini key) is intentionally committed - keep this repository PRIVATE.
+
+# local Python environment and caches (rebuilt automatically by ./run.sh)
+**/.venv/
+**/__pycache__/
+*.pyc
+.DS_Store
+
+# generated search indexes (>100 MB, rebuilt automatically on first run)
+consulting_platform/data/index/
+
+# local AI-assistant tooling
+**/.agents/
+**/.claude/
